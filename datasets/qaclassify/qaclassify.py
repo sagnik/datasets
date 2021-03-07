@@ -64,7 +64,7 @@ class QaClassify(datasets.GeneratorBasedBuilder):
                 features=datasets.Features(
                     {
                         "question": datasets.Value("string"),
-                        "answer": datasets.Value("string"),
+                        "context": datasets.Value("string"),
                         "question_type": datasets.features.ClassLabel(names=['Entity_properties',
                                                                               'Character_identity',
                                                                               'Temporal_order',
@@ -112,7 +112,7 @@ class QaClassify(datasets.GeneratorBasedBuilder):
                     datum = json.loads(line)
                     yield idx, {
                         "question": datum["question"],
-                        "answer": datum.get("answer"),
+                        "context": datum["answer"],
                         "question_type": datum["question_type"]
                     }
         else:
