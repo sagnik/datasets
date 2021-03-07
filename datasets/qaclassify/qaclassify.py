@@ -65,16 +65,7 @@ class QaClassify(datasets.GeneratorBasedBuilder):
                     {
                         "question": datasets.Value("string"),
                         "context": datasets.Value("string"),
-                        "question_type": datasets.features.ClassLabel(names=['Entity_properties',
-                                                                              'Character_identity',
-                                                                              'Temporal_order',
-                                                                              'Event_duration',
-                                                                              'Causality',
-                                                                              'Belief_states',
-                                                                              'Subsequent_state',
-                                                                              'Unanswerable',
-                                                                              'Factual']
-                                                                             ),
+                        "question_type": datasets.Value("string"),
                     }
                 ),
                 # No default supervised_keys (as we have to pass both premise
