@@ -112,7 +112,7 @@ class QaClassify(datasets.GeneratorBasedBuilder):
                     datum = json.loads(line)
                     yield idx, {
                         "question": datum["question"],
-                        "context": datum["answer"],
+                        "context": datum["context"],
                         "question_type": datum["question_type"]
                     }
         else:
